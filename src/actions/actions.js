@@ -1,4 +1,5 @@
 import {FETCH_PIZZA_START,FETCH_PIZZA_SUCCESS,FETCH_PIZZA_ERR} from "./actionTypes"
+import {fetchPizzaData as fetchPizzaApi} from "../api/pizzaApi"
 
 export const fetchPizza = () => async (dispatch) => {
   dispatch({

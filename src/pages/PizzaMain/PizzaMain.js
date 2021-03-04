@@ -1,5 +1,8 @@
 import React from "react";
 import {connect} from "react-redux";
+import {fetchPizza} from "../../actions/actions"
+
+
 
 class PizzaMain extends React.Component {
 
@@ -8,7 +11,7 @@ class PizzaMain extends React.Component {
   }
   
   componentDidMount() {
-    this.props.fetchProps()
+    this.props.fetchPizza()
   }
 
   render () {
@@ -21,8 +24,6 @@ class PizzaMain extends React.Component {
   }
 }
 
-mapDispatchToProps = () => {  return fetchPizza
-
-}
+const mapDispatchToProps = { fetchPizza }
 
 export default connect(null, mapDispatchToProps)(PizzaMain);
