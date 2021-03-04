@@ -1,6 +1,5 @@
+const initialState = {}
 
-initialState = {}
-
-export default pizzaReducer = (state = initialState) => {
+export default (state = initialState) => {
   return state
 }
