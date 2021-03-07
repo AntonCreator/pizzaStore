@@ -22,8 +22,8 @@ class Main extends React.Component {
       <div className = "container-fluid">
         <div className = "container">
           <div className = "row">
-            <div className = "col-md-3">Sidebar</div>
-            <div className = "col-md-9">{routes}</div>
+            <div className = "col-md-2">Sidebar</div>
+            <div className = "col-md-10">{routes}</div>
           </div>
         </div>
         </div>

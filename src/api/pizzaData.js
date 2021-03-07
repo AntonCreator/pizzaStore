@@ -69,7 +69,7 @@ export default  [
     id : "5",
     category : "3",
     name : "With mushrooms",
-    image : "/uploads/mushrooms.jpg",
+    image : "/uploads/mashrooms.jpg",
     weight : "540 g",
     cost : "4$",
     contain : [
