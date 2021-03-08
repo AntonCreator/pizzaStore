@@ -1,3 +1,5 @@
-.card {
-  margin : 10px;
+
+.card-text {
+  display: flex;
+  justify-content: space-between;
 }

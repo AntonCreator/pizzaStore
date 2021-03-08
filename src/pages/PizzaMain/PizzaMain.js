@@ -1,9 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
-import {Link} from "react-router-dom"
 
-import {fetchPizza} from "../../actions/actions";
+import {fetchPizza, loadPizza} from "../../actions/actions";
 import {getPizzas} from "../../selectors"
+import RenderPizza from "./pizzaCard";
 
 
 class PizzaMain extends React.Component {
@@ -16,43 +16,30 @@ class PizzaMain extends React.Component {
     this.props.fetchPizza()
   }
 
-  renderPizza = (pizza, index) => {
-    return( 
-    
-      <div className="card col-sm-6 col-lg-4" key = {index}>
-      <img className="card-img-top" src={pizza.image} />
-      <div className="card-body">
-        <h4 className="card-title">{pizza.name}</h4>
-        <h5> cost : {pizza.cost}</h5>
-        <p className ="card-text">
-        <button className = "btn btn-warning">
-         Add a cart 🛒
-        </button>
-       <Link to = {`/pizzas/${pizza.id}`}>
-       <button className = "btn btn-success">See more</button>
-       </Link>
-        </p>
-      </div>
-</div>    
-      )
-    }
-
-  
-
   render () {
     const {pizzas} = this.props
     return (
 
-      <div className = "books row">
-        {pizzas.map((pizza,index) => this.renderPizza(pizza,index))}
+      <div>
+      <div className = "row">
+        {pizzas.map((pizza,index) => (<RenderPizza pizza = {pizza} index = {index}/>))}
+      </div>
+      <div className = "row">
+        <div className = "col-md-12">
+          <button onClick = {this.props.loadPizza} className = "btn btn-primary btn-block load-btn">
+            load more ...
+          </button>
+        </div>
+      </div>
       </div>
 
     )
   }
 }
+
 const mapStateToProps = (state) => ({
   pizzas : getPizzas(state)
 })
-const mapDispatchToProps = { fetchPizza }
+const mapDispatchToProps = { fetchPizza, loadPizza }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PizzaMain);

@@ -9,6 +9,7 @@ import {routerMiddleware, ConnectedRouter} from 'connected-react-router';
 
 import createRootReducer from "./reducers/rootReducer";
 import Main from "./pages/main/main";
+import "../src/css/App.css"
 
 
 const history = createBrowserHistory()
