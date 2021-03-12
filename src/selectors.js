@@ -17,3 +17,12 @@ export const getCartTotalPrice = (state) => {
 
 return totalCartPrice
 }
+
+export const getSearchedPizzas = (state) => 
+{const searchedPizzas = R.map(id => getPizzaByID(state,id),state.searchByNameReducer.ids)
+  return searchedPizzas }
+
+export const getSearchedNameLength = (state) => {
+  const length = R.length(state.searchByNameReducer.ids)
+  return length
+}

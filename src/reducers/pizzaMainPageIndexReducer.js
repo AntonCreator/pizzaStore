@@ -11,7 +11,7 @@ export default (state = initialState, {type, payload}) => {
       return R.merge(state, { ids : R.pluck("id",payload)})
     case LOAD_PIZZA_SUCCESS :
       return R.merge(state, { ids : R.pluck("id",payload)})
-
+    
     default : return state;
   }
 }

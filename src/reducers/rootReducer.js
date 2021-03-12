@@ -5,6 +5,7 @@ import pizzaReducer from "./pizzaReducer";
 import pizzaMainPageIndexReducer from "./pizzaMainPageIndexReducer"
 import pizzaPageReducer from "./pizzaPageReducer"
 import addCartReducer from "./addCartReducer";
+import searchByNameReducer from "./searchByNameReducer";
 
 export default (history) => combineReducers ({
   
@@ -12,5 +13,6 @@ export default (history) => combineReducers ({
   pizzaPageReducer,
   pizzaMainPageIndexReducer,
   addCartReducer,
+  searchByNameReducer,
   router : connectRouter(history)
 })

@@ -19,3 +19,11 @@ export const fetchPizzaById = async (id) => {
     resolve(PizzaInf)
   })
 }
+
+export const searchPizzaByName = async (name) => {
+  return new Promise((resolve, reject) => {
+    const filterFunc = item => R.contains(name.toLowerCase(), (R.prop("name", item)).toLowerCase())
+    const searchResult = R.filter(filterFunc,pizzaData)
+    resolve(searchResult)
+  })
+}

@@ -7,10 +7,15 @@ import {FETCH_PIZZA_START,
         FETCH_PIZZA_BY_ID_START,
         FETCH_PIZZA_BY_ID_SUCCESS,
         FETCH_PIZZA_BY_ID_ERR,
-        ADD_PIZZA_TO_CART} from "./actionTypes"
+        ADD_PIZZA_TO_CART,
+        SEARCH_PIZZA_BY_NAME_START,
+        SEARCH_PIZZA_BY_NAME_ERR,
+        SEARCH_PIZZA_BY_NAME_SUCCESS} from "./actionTypes"
 import {fetchPizzaData as fetchPizzaApi,
         loadPizzaData as loadPizzaApi,
-        fetchPizzaById as fetchPizzaByIdApi} from "../api/pizzaApi";
+        fetchPizzaById as fetchPizzaByIdApi,
+        searchPizzaByName as searchPizzaByNameApi} from "../api/pizzaApi";
+
 import {getPizzaByID} from "../selectors";
 import * as R from "ramda";
 
@@ -91,4 +96,26 @@ export const cartAdd = (id) => (dispatch) => {
     type : ADD_PIZZA_TO_CART,
     payload : id
   })
+}
+
+export const searchPizzaByName = (name) => async (dispatch) => {
+  
+  dispatch({
+    type : SEARCH_PIZZA_BY_NAME_START
+  })
+
+  try { 
+    
+    const search = await searchPizzaByNameApi(name)
+    dispatch ({
+      type : SEARCH_PIZZA_BY_NAME_SUCCESS,
+      payload : search
+    })
+  } catch (err) {
+    dispatch ({
+      type : SEARCH_PIZZA_BY_NAME_ERR,
+      payload : err,
+      err : true
+    })
+  }
 }

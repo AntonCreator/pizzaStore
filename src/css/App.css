@@ -1,7 +1,7 @@
 * {
   font-family: cursive;
 }
-.card-text, .form-group{
+.card-text, .form-group, .brand{
   display: flex;
   justify-content: space-between;
 }
@@ -22,3 +22,56 @@
   font-size : 20px;
 }
 
+.cart-text {
+  font-size : 17px;
+}
+
+.round-logo {
+  width : 30%;
+  border-radius:50%;
+  animation: 8s linear 0s infinite running rotation;
+  -webkit-animation: 8s linear 0s infinite running rotation;
+
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform : rotate(360deg)
+  }
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform : rotate(360deg)
+  }
+}
+
+.brand {
+ background-color: gray;
+ align-items: center;
+ color: #ffeb3b;
+ padding: 5px;
+ margin-bottom: 20px;
+}
+
+.cart-back {
+  width: 30%;
+}
+
+.cart-container{
+  display: flex;
+  align-items: center;
+  background-color:#ffeb3b;
+}
+
+.cart-link {
+  height: 80%;
+  margin : 8px;
+  display: flex;
+  align-items: center;
+}

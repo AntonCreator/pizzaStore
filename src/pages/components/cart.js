@@ -6,12 +6,12 @@ import {getCartCount, getCartTotalPrice} from "../../selectors";
 
 const Cart = (props) => {
   return (
-    <div className = "cart align-middle">
-      <div className = "dropdown">
-        <Link to = "/cart" className = "btn btn-block btn-warning btn-lg">
-          <i className = "fas fa-shopping-cart" />
-          <span>{props.cartTotalItems} pizza(s) - {props.cartTotalPrice} $</span>
+    <div className = "cart">
+      <div className = "cart-container">
+        <Link to = "/cart" className = "btn btn-outline-dark btn-block cart-link">
+          <span className = "cart-text">{props.cartTotalItems} pizza(s) - {props.cartTotalPrice} $</span>
         </Link>
+        <img className = "cart-back" src = "./cart-back.jpg"/>
       </div>
     </div>
   )
