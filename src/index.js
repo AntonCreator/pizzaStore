@@ -8,8 +8,8 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import {routerMiddleware, ConnectedRouter} from 'connected-react-router';
 
 import createRootReducer from "./reducers/rootReducer";
-import Main from "./pages/main/main";
-import "../src/css/App.css"
+import "../src/css/App.css";
+import routes from "./routes";
 
 
 const history = createBrowserHistory()
@@ -21,7 +21,7 @@ composeWithDevTools(applyMiddleware(...middlewares))
 ReactDOM.render(
   <Provider store = {store}>
     <ConnectedRouter history = {history}>
-      <Main />
+      { routes }
     </ConnectedRouter>
   </Provider>,
 

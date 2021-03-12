@@ -1,5 +1,24 @@
-
-.card-text {
+* {
+  font-family: cursive;
+}
+.card-text, .form-group{
   display: flex;
   justify-content: space-between;
 }
+
+.info-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.engridient {
+  font-size : 20px;
+}
+

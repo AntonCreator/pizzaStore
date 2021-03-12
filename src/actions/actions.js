@@ -3,9 +3,16 @@ import {FETCH_PIZZA_START,
         FETCH_PIZZA_ERR,
         LOAD_PIZZA_START,
         LOAD_PIZZA_SUCCESS,
-        LOAD_PIZZA_ERR} from "./actionTypes"
+        LOAD_PIZZA_ERR,
+        FETCH_PIZZA_BY_ID_START,
+        FETCH_PIZZA_BY_ID_SUCCESS,
+        FETCH_PIZZA_BY_ID_ERR,
+        ADD_PIZZA_TO_CART} from "./actionTypes"
 import {fetchPizzaData as fetchPizzaApi,
-        loadPizzaData as loadPizzaApi} from "../api/pizzaApi"
+        loadPizzaData as loadPizzaApi,
+        fetchPizzaById as fetchPizzaByIdApi} from "../api/pizzaApi";
+import {getPizzaByID} from "../selectors";
+import * as R from "ramda";
 
 export const fetchPizza = () => async (dispatch) => {
   const limit = 9;
@@ -56,4 +63,32 @@ export const loadPizza = () => async (dispatch) => {
   }
   
 }
+
+export const fetchPizzaById = (id) => async (dispatch) => {
   
+  dispatch({
+    type : FETCH_PIZZA_BY_ID_START
+  })
+
+  try { 
+    
+    const index = await fetchPizzaByIdApi(id)
+    dispatch ({
+      type : FETCH_PIZZA_BY_ID_SUCCESS,
+      payload : index
+    })
+  } catch (err) {
+    dispatch ({
+      type : FETCH_PIZZA_BY_ID_ERR,
+      payload : err,
+      err : true
+    })
+  }
+}
+
+export const cartAdd = (id) => (dispatch) => {
+  dispatch ({
+    type : ADD_PIZZA_TO_CART,
+    payload : id
+  })
+}

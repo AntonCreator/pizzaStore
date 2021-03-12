@@ -1,9 +1,10 @@
 import React from "react";
 import {connect} from "react-redux";
 
-import {fetchPizza, loadPizza} from "../../actions/actions";
-import {getPizzas} from "../../selectors"
+import {fetchPizza, loadPizza, cartAdd} from "../../actions/actions";
+import {getPizzas} from "../../selectors";
 import RenderPizza from "./pizzaCard";
+import Layout from "../main/Layout"
 
 
 class PizzaMain extends React.Component {
@@ -19,10 +20,13 @@ class PizzaMain extends React.Component {
   render () {
     const {pizzas} = this.props
     return (
-
+      
+      <Layout>
       <div>
       <div className = "row">
-        {pizzas.map((pizza,index) => (<RenderPizza pizza = {pizza} index = {index}/>))}
+        {pizzas.map((pizza,index) => (<RenderPizza pizza = {pizza} 
+                                                   key = {index}
+                                                   cartAdd = {this.props.cartAdd}/>))}
       </div>
       <div className = "row">
         <div className = "col-md-12">
@@ -32,6 +36,7 @@ class PizzaMain extends React.Component {
         </div>
       </div>
       </div>
+      </Layout>
 
     )
   }
@@ -40,6 +45,6 @@ class PizzaMain extends React.Component {
 const mapStateToProps = (state) => ({
   pizzas : getPizzas(state)
 })
-const mapDispatchToProps = { fetchPizza, loadPizza }
+const mapDispatchToProps = { fetchPizza, loadPizza, cartAdd }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PizzaMain);

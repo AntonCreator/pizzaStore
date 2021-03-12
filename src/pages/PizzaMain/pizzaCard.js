@@ -1,16 +1,16 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const RenderPizza = ({pizza, index}) => {
+const RenderPizza = ({pizza, index, ...props}) => {
   return( 
   
-    <div className="card col-sm-6 col-lg-4" key = {index}>
+    <div className="card col-sm-6 col-lg-4" >
       <img className="card-img-top" src={pizza.image} />
       <div className="card-body">
-        <h4 className="card-title">{pizza.name}</h4>
-        <h5> cost : {pizza.cost}</h5> 
+        <h5 className="card-title">{pizza.name}</h5>
+        <h5> cost : {pizza.cost} $</h5> 
           <p className ="card-text">
-          <button className = "btn btn-warning">
+          <button onClick = {() => props.cartAdd(pizza.id)} className = "btn btn-warning">
            🛒
            </button>
           <Link to = {`/pizzas/${pizza.id}`}>
@@ -21,4 +21,5 @@ const RenderPizza = ({pizza, index}) => {
     </div>    
     )
   }
+
 export default RenderPizza

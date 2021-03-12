@@ -5,7 +5,7 @@ export default  [
     name : "Cheesburger",
     image : "/uploads/cheesburger.jpg",
     weight : "620 g",
-    cost : "5$",
+    cost : "5",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
@@ -23,7 +23,7 @@ export default  [
     name : "Pepperoni fresh",
     image : "/uploads/pepperoni_fresh.jpg",
     weight : "600 g",
-    cost : "4.5$",
+    cost : "4.5",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
@@ -39,7 +39,7 @@ export default  [
     name : "With pepper",
     image : "/uploads/withpepper.jpg",
     weight : "600 g",
-    cost : "4.5$",
+    cost : "4.5",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
@@ -53,7 +53,7 @@ export default  [
     name : "Italian",
     image : "/uploads/italian.jpg",
     weight : "665 g",
-    cost : "6$",
+    cost : "6",
     contain : [
       'Sauce "Florentine"',
       'mozzarella',
@@ -71,7 +71,7 @@ export default  [
     name : "With mushrooms",
     image : "/uploads/mashrooms.jpg",
     weight : "540 g",
-    cost : "4$",
+    cost : "4",
     contain : [
       'Sauce "Florentine"',
       'mozzarella',
@@ -85,7 +85,7 @@ export default  [
     name : "Mexican",
     image : "/uploads/mexanican.jpg",
     weight : "600 g",
-    cost : "5$",
+    cost : "5",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
@@ -102,7 +102,7 @@ export default  [
     name : "Margarita",
     image : "/uploads/margarita.jpg",
     weight : "605 g",
-    cost : "4$",
+    cost : "4",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
@@ -116,7 +116,7 @@ export default  [
     name : "Florencia",
     image : "/uploads/florencia.jpg",
     weight : "580 g",
-    cost : "5$",
+    cost : "5",
     contain : [
       'Sauce "Italian"',
       'mozzarella',
@@ -134,7 +134,7 @@ export default  [
     name : "European",
     image : "/uploads/european.jpg",
     weight : "620 g",
-    cost : "6$",
+    cost : "6",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
@@ -152,7 +152,7 @@ export default  [
     name : "Sicilian",
     image : "/uploads/sicilian.jpg",
     weight : "620 g",
-    cost : "4$",
+    cost : "4",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
@@ -169,7 +169,7 @@ export default  [
     name : "Tropical",
     image : "/uploads/tropical.jpg",
     weight : "610 g",
-    cost : "5$",
+    cost : "5",
     contain : [
       'Sauce "Florentine"',
       'mozzarella',
@@ -186,7 +186,7 @@ export default  [
     name : "Julietta",
     image : "/uploads/julietta.jpg",
     weight : "600 g",
-    cost : "5$",
+    cost : "5",
     contain : [
       'Sauce "Florentine"',
       'mozzarella',
@@ -204,7 +204,7 @@ export default  [
     name : "Romulan",
     image : "/uploads/romulan.jpg",
     weight : "670 g",
-    cost : "5.5$",
+    cost : "5.5",
     contain : [
       'Sauce "Italian"',
       'mozzarella',
@@ -224,7 +224,7 @@ export default  [
     name : "Meat",
     image : "/uploads/meat.jpg",
     weight : "715 g",
-    cost : "6$",
+    cost : "6",
     contain : [
       'Sauce "Florentine"',
       'mozzarella',
@@ -245,7 +245,7 @@ export default  [
     name : "Sweaty",
     image : "/uploads/sweaty.jpg",
     weight : "470 g",
-    cost : "3.5$",
+    cost : "3.5",
     contain : [
       'cranberry',
       'pineapple',
@@ -258,7 +258,7 @@ export default  [
     name : "ChickenGril",
     image : "/uploads/chickenGril.jpg",
     weight : "610 g",
-    cost : "5$",
+    cost : "5",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
@@ -275,7 +275,7 @@ export default  [
     name : "Cheesy",
     image : "/uploads/cheesy.jpg",
     weight : "590 g",
-    cost : "4$",
+    cost : "4",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
@@ -289,7 +289,7 @@ export default  [
     name : "Crazy",
     image : "/uploads/crazy.jpg",
     weight : "580 g",
-    cost : "4$",
+    cost : "4",
     contain : [
       'Sauce "Italian"',
       'mozzarella',
@@ -304,7 +304,7 @@ export default  [
     name : "Sea",
     image : "/uploads/sea.jpg",
     weight : "620 g",
-    cost : "7$",
+    cost : "7",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
@@ -319,7 +319,7 @@ export default  [
     name : "Gorinich",
     image : "/uploads/gorinich.jpg",
     weight : "600 g",
-    cost : "5$",
+    cost : "5",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
@@ -336,7 +336,7 @@ export default  [
     name : "Lite",
     image : "/uploads/lite.jpg",
     weight : "560 g",
-    cost : "5$",
+    cost : "5",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
@@ -351,7 +351,7 @@ export default  [
     name : "Chicken Teriyaki",
     image : "/uploads/teriyakiChicken.jpg",
     weight : "630 g",
-    cost : "5$",
+    cost : "5",
     contain : [
       'Sauce "Italian"',
       'mozzarella',
@@ -368,7 +368,7 @@ export default  [
     name : "Fangerbiff",
     image : "/uploads/fangerbiff.jpg",
     weight : "590 g",
-    cost : "4$",
+    cost : "4",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
@@ -384,7 +384,7 @@ export default  [
     name : "Salamandra",
     image : "/uploads/salamandr.jpg",
     weight : "550 g",
-    cost : "5$",
+    cost : "5",
     contain : [
       'Sauce "Italian"',
       'mozzarella',
@@ -400,7 +400,7 @@ export default  [
     name : "Family",
     image : "/uploads/family.jpg",
     weight : "640 g",
-    cost : "5$",
+    cost : "5",
     contain : [
      ' Sauce "Tomato"',
       'mozzarella',
@@ -418,7 +418,7 @@ export default  [
     name : "Fegetarian",
     image : "/uploads/vegetables.jpg",
     weight : "500 g",
-    cost : "4$",
+    cost : "4",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
@@ -437,7 +437,7 @@ export default  [
     name : "Biff & mushrooms",
     image : "/uploads/biff_mushrooms.jpg",
     weight : "605 g",
-    cost : "5.5$",
+    cost : "5.5",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
@@ -453,7 +453,7 @@ export default  [
     name : "Pepperoni",
     image : "/uploads/pepperoni.jpg",
     weight : "600 g",
-    cost : "5$",
+    cost : "5",
     contain : [
       'Sauce "Tomato"',
       'mozzarella',
