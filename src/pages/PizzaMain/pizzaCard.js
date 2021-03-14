@@ -14,7 +14,7 @@ const RenderPizza = ({pizza, index, ...props}) => {
            🛒
            </button>
           <Link to = {`/pizzas/${pizza.id}`}>
-          <button className = "btn btn-success">See more</button>
+          <button className = "btn btn-secondary">See more</button>
           </Link>
           </p>
       </div>

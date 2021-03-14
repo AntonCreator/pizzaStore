@@ -26,3 +26,21 @@ export const getSearchedNameLength = (state) => {
   const length = R.length(state.searchByNameReducer.ids)
   return length
 }
+
+export const getPizzasWithCountInCart = (state) => {
+  const uniqItems = R.uniq(state.addCartReducer)
+  const count = (id) => R.compose(
+      R.length,
+      R.filter(cartId => R.equals(id,cartId))
+    )(state.addCartReducer)
+  
+
+  const addCount = (item) => R.assoc("count", count(item.id), item)
+
+  const pizzasWithCount = R.compose(
+      R.map(addCount),
+      R.map(id => getPizzaByID(state,id))
+    )(uniqItems)
+  
+  return pizzasWithCount
+}  

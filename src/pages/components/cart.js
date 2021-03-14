@@ -11,7 +11,7 @@ const Cart = (props) => {
         <Link to = "/cart" className = "btn btn-outline-dark btn-block cart-link">
           <span className = "cart-text">{props.cartTotalItems} pizza(s) - {props.cartTotalPrice} $</span>
         </Link>
-        <img className = "cart-back" src = "./cart-back.jpg"/>
+        <img className = "cart-back" src = "/cart-back.jpg"/>
       </div>
     </div>
   )

@@ -10,14 +10,13 @@ import {FETCH_PIZZA_START,
         ADD_PIZZA_TO_CART,
         SEARCH_PIZZA_BY_NAME_START,
         SEARCH_PIZZA_BY_NAME_ERR,
-        SEARCH_PIZZA_BY_NAME_SUCCESS} from "./actionTypes"
+        SEARCH_PIZZA_BY_NAME_SUCCESS,
+        REMOVE_PIZZA_FROM_CART,
+        CLEAN_CART} from "./actionTypes"
 import {fetchPizzaData as fetchPizzaApi,
         loadPizzaData as loadPizzaApi,
         fetchPizzaById as fetchPizzaByIdApi,
         searchPizzaByName as searchPizzaByNameApi} from "../api/pizzaApi";
-
-import {getPizzaByID} from "../selectors";
-import * as R from "ramda";
 
 export const fetchPizza = () => async (dispatch) => {
   const limit = 9;
@@ -118,4 +117,23 @@ export const searchPizzaByName = (name) => async (dispatch) => {
       err : true
     })
   }
+}
+
+export const removePizzaFromCart = (id) => (dispatch) => {
+
+  dispatch({
+    type : REMOVE_PIZZA_FROM_CART,
+    payload : id})
+
+}
+
+
+export const cleanCart = () => (dispatch) => {
+  dispatch({
+    type : CLEAN_CART
+  })
+}
+
+export const checkout = (load) => () => {
+  alert(JSON.stringify(load))
 }
