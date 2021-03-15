@@ -12,11 +12,19 @@ import {FETCH_PIZZA_START,
         SEARCH_PIZZA_BY_NAME_ERR,
         SEARCH_PIZZA_BY_NAME_SUCCESS,
         REMOVE_PIZZA_FROM_CART,
-        CLEAN_CART} from "./actionTypes"
+        CLEAN_CART,
+        FETCH_PIZZA_CATEGORIES_START,
+        FETCH_PIZZA_CATEGORIES_SUCCESS,
+        FETCH_PIZZA_CATEGORIES_ERR,
+        FETCH_PIZZA_CATEGORIES_INF_START,
+        FETCH_PIZZA_CATEGORIES_INF_SUCCESS,
+        FETCH_PIZZA_CATEGORIES_INF_ERR} from "./actionTypes"
 import {fetchPizzaData as fetchPizzaApi,
         loadPizzaData as loadPizzaApi,
         fetchPizzaById as fetchPizzaByIdApi,
-        searchPizzaByName as searchPizzaByNameApi} from "../api/pizzaApi";
+        searchPizzaByName as searchPizzaByNameApi,
+        fetchCategories as fetchCategoriesApi,
+        fetchCategoriesInfo as fetchCategoriesInfoApi} from "../api/pizzaApi";
 
 export const fetchPizza = () => async (dispatch) => {
   const limit = 9;
@@ -137,3 +145,44 @@ export const cleanCart = () => (dispatch) => {
 export const checkout = (load) => () => {
   alert(JSON.stringify(load))
 }
+
+export const fetchCategories = () => async(dispatch) => {
+  dispatch({
+    type : FETCH_PIZZA_CATEGORIES_START
+  })
+
+  try{
+    const categories = await fetchCategoriesApi()
+    dispatch ({
+      type : FETCH_PIZZA_CATEGORIES_SUCCESS,
+      payload : categories
+    }) 
+  } catch (err) {
+    dispatch ({
+      type : FETCH_PIZZA_CATEGORIES_ERR,
+      payload : err,
+      err : true
+    })
+  }
+}
+
+export const fetchCategoriesINFO = (id) => async(dispatch) => {
+  dispatch({
+    type : FETCH_PIZZA_CATEGORIES_INF_START
+  })
+
+  try{
+    const categoriesInfo = await fetchCategoriesInfoApi(id)
+    dispatch ({
+      type : FETCH_PIZZA_CATEGORIES_INF_SUCCESS,
+      payload : categoriesInfo
+    }) 
+  } catch (err) {
+    dispatch ({
+      type : FETCH_PIZZA_CATEGORIES_INF_ERR,
+      payload : err,
+      err : true
+    })
+  }
+}
+  

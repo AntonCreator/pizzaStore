@@ -2,6 +2,7 @@ import React from "react";
 
 import Cart from "./cart";
 import Search from "./search";
+import Categories from "./categories"
 
 const Sidebar = () => {
   return (
@@ -15,6 +16,8 @@ const Sidebar = () => {
       <Cart />
       <hr></hr>
       <Search />
+      <hr></hr>
+      <Categories />
     </div>
     
 

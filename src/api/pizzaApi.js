@@ -1,5 +1,7 @@
-import pizzaData from "./pizzaData"
-import * as R from "ramda"
+import pizzaData from "./pizzaData";
+import pizzaCategories from "./pizzaCategories";
+import * as R from "ramda";
+
 
 export const fetchPizzaData = async (limit) => {
   return new Promise((resolve, reject) => {
@@ -25,5 +27,18 @@ export const searchPizzaByName = async (name) => {
     const filterFunc = item => R.contains(name.toLowerCase(), (R.prop("name", item)).toLowerCase())
     const searchResult = R.filter(filterFunc,pizzaData)
     resolve(searchResult)
+  })
+}
+
+export const fetchCategories = async () => {
+  return new Promise((resolve, reject) => {
+    resolve(pizzaCategories)
+  })
+}
+export const fetchCategoriesInfo = async(id) => {
+  return new Promise((resolve, reject) => {
+    const filterFunk2 = (item) => R.equals(id, item.category);
+    const result =  R.filter(filterFunk2, pizzaData);
+    resolve(result)
   })
 }

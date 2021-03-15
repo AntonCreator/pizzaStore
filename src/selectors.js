@@ -44,3 +44,7 @@ export const getPizzasWithCountInCart = (state) => {
   
   return pizzasWithCount
 }  
+
+export const getCategories = (state) => {
+  return R.values(state.categoriesReducer)
+}

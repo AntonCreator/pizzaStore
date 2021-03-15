@@ -4,9 +4,15 @@ import * as R from "ramda";
 const RenderCart = ({total, pizzasInCart,...props}) => {
   const isCartEmpty = R.isEmpty(pizzasInCart)
   return(
+
     <div>
-    <div className = "table-responsive">
-      <table className="table table-hover">
+      <div>
+        {isCartEmpty &&
+          <h4>Your cart is empty 😅</h4>}
+      </div>
+      {R.not(isCartEmpty) &&
+    <div className = "table-responsive ">
+      <table className="table table-hover table-bordered">
         <thead className = "thead-dark">
           <tr>
             <th>#</th>
@@ -37,7 +43,7 @@ const RenderCart = ({total, pizzasInCart,...props}) => {
        
          </tbody>
       </table>
-    </div>
+    </div>}
      {
       R.not(isCartEmpty) && 
       <div className = "row">
