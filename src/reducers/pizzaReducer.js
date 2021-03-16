@@ -1,7 +1,8 @@
 import {FETCH_PIZZA_BY_ID_SUCCESS, 
         FETCH_PIZZA_SUCCESS,
         LOAD_PIZZA_SUCCESS, 
-        SEARCH_PIZZA_BY_NAME_SUCCESS} from "../actions/actionTypes";
+        SEARCH_PIZZA_BY_NAME_SUCCESS,
+        FETCH_PIZZA_CATEGORIES_INF_SUCCESS} from "../actions/actionTypes";
 
 import * as R from "ramda"
 
@@ -20,6 +21,9 @@ export default (state = initialState, {type,payload}) => {
     case SEARCH_PIZZA_BY_NAME_SUCCESS :
       const searchedPizzas = R.indexBy(R.prop("id"), payload)
       return R.merge(state, searchedPizzas)
+    case FETCH_PIZZA_CATEGORIES_INF_SUCCESS : 
+      const catigoryPizza = R.indexBy(R.prop("id"), payload)
+      return R.merge(state, catigoryPizza)
     default : return state;
 
   }

@@ -25,8 +25,8 @@ class PizzaPage extends React.Component {
         
         <hr></hr>
         <div className = "form-group">
-        <h4>{pizzaInfo.name}</h4>
-        <h4>{pizzaInfo.cost} $</h4>
+        <h4 className = "containsName">{pizzaInfo.name}</h4>
+        <h4 className = "containsName">{pizzaInfo.cost} $</h4>
         </div>
         <Link to = "/" className = "btn btn-block btn-outline-dark">
           Continue shopping
@@ -43,9 +43,9 @@ class PizzaPage extends React.Component {
     return (
       <div className = "container-fluid">
         <div className = "row">
-          <div className = "col-md-9"> {pizzaInfo &&<RenderPizzaPage pizzaInfo = {pizzaInfo}/>}
+          <div className = "col-md-9 col-lg-9"> {pizzaInfo &&<RenderPizzaPage pizzaInfo = {pizzaInfo}/>}
           </div>
-          <div className = "col-md-3">{pizzaInfo &&this.renderSidebar()}</div>
+          <div className = "col-md-3 col-lg-3">{pizzaInfo &&this.renderSidebar()}</div>
           
         </div>
       </div>

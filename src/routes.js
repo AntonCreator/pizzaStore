@@ -13,7 +13,7 @@ export default (
     <Route path = "/pizzas/:id" component = {PizzaPage} exact/>
     <Route path = "/cart" component = {CartPage} />
     <Route path = "/searchingName" component = {SearchName} />
-    <Route path = "/categories/:id" component = {CategoryPage}/>
+    <Route path = "/categories/:id" component = {CategoryPage} exact/>
   </Switch>
 )
 

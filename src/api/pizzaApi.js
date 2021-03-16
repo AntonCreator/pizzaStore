@@ -37,7 +37,7 @@ export const fetchCategories = async () => {
 }
 export const fetchCategoriesInfo = async(id) => {
   return new Promise((resolve, reject) => {
-    const filterFunk2 = (item) => R.equals(id, item.category);
+    const filterFunk2 = (item) => R.equals(id, R.prop("category",item));
     const result =  R.filter(filterFunk2, pizzaData);
     resolve(result)
   })

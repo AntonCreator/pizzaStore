@@ -52,7 +52,7 @@
 }
 
 .brand {
- background-color: gray;
+ background-color:#333;
  align-items: center;
  color: #ffeb3b;
  padding: 5px;
@@ -100,4 +100,21 @@
   border-radius: 7px;
 
 }
+
+.activeCat {
+  color : white;
+  background: #333;
+}
+
+@media ( max-width : 768px ) {
+   .engridient {
+     font-size: 16px;
+   }
+}
+@media ( max-width : 768px ) {
+  .containsTitle, .containsWeight, .containsName {
+    font-size: 18px;
+  }
+}
+
 

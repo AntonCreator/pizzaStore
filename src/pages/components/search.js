@@ -16,16 +16,19 @@ class Search extends React.Component {
   
   handleChange = (event) => {
     this.setState({
-      input : event.target.value
-     
+      input : event.target.value,
+      length : ""
     })
   }
   
-  handleSubmit = (event) => {
+  handleSubmit = async(event) => {
     event.preventDefault();
-    this.props.searchPizzaByName(this.state.input)
+    await this.props.searchPizzaByName(this.state.input)
+    this.setState({
+      length : this.props.nums
+    })
   }
-
+  
   render () {
     return (
       <div>
@@ -43,7 +46,9 @@ class Search extends React.Component {
               <button className = "btn btn-warning"><i className="fa fa-search" aria-hidden="true"></i></button>
               
             </div>
-            <Link to = {"/searchingName"} className = "btn btn-block btn-outline-dark">Show results</Link>
+           
+            <Link to = {"/searchingName"}  className = "btn btn-block btn-outline-dark">
+            Show results : {this.state.length} </Link>
 
           </div>
         </form> 

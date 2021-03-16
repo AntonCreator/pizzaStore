@@ -1,3 +1,5 @@
+import * as R from "ramda";
+
 import {FETCH_PIZZA_START,
         FETCH_PIZZA_SUCCESS,
         FETCH_PIZZA_ERR,
@@ -76,8 +78,16 @@ export const loadPizza = () => async (dispatch) => {
   
 }
 
-export const fetchPizzaById = (id) => async (dispatch) => {
-  
+export const fetchPizzaById = (id) => async (dispatch, getState) => {
+  const state = getState()
+  const loadedPizza = R.prop(id, state.pizzaReducer)
+  if(loadedPizza) {
+    dispatch({
+      type : FETCH_PIZZA_BY_ID_SUCCESS,
+      payload : loadedPizza
+    })
+     return 
+  }
   dispatch({
     type : FETCH_PIZZA_BY_ID_START
   })

@@ -48,3 +48,11 @@ export const getPizzasWithCountInCart = (state) => {
 export const getCategories = (state) => {
   return R.values(state.categoriesReducer)
 }
+
+export const getCategoriesPizzas = (state) => 
+{const pizzasCaty = R.map(id => getPizzaByID(state,id),state.categoriesPageIdsReducer.ids)
+  return pizzasCaty }
+
+export const getActiveCategory = (ownProps) => {
+  return R.path(["match","params","id"], ownProps)
+}
